@@ -1,132 +1,3 @@
-// // Replace the old social names with these:
-// import { Package, Mail, Phone, MapPin } from "lucide-react";
-// import {
-//   FaFacebookF as Facebook,
-//   FaTwitter as X,
-//   FaInstagram as Instagram,
-//   FaLinkedinIn as Linkedin,
-// } from "react-icons/fa";
-// import { Link } from "react-router-dom";
-
-// export function Footer() {
-//   return (
-//     <footer className="bg-gray-900 text-gray-300">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-//         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-//           <div>
-//             <div className="flex items-center gap-2 mb-4">
-//               <Package className="w-8 h-8 text-blue-500" />
-//               <span className="font-bold text-xl text-white">SwiftCourier</span>
-//             </div>
-//             <p className="text-sm mb-4">
-//               Your trusted logistics partner for fast, reliable, and secure
-//               deliveries worldwide.
-//             </p>
-//             <div className="flex gap-4">
-//               <Facebook className="w-5 h-5 hover:text-blue-500 cursor-pointer transition-colors" />
-//               <X className="w-5 h-5 hover:text-blue-400 cursor-pointer transition-colors" />
-//               <Instagram className="w-5 h-5 hover:text-pink-500 cursor-pointer transition-colors" />
-//               <Linkedin className="w-5 h-5 hover:text-blue-600 cursor-pointer transition-colors" />
-//             </div>
-//           </div>
-
-//           <div>
-//             <h3 className="font-bold text-white mb-4">Quick Links</h3>
-//             <ul className="space-y-2">
-//               <li>
-//                 <Link to="/" className="hover:text-blue-500 transition-colors">
-//                   Home
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link
-//                   to="/about"
-//                   className="hover:text-blue-500 transition-colors"
-//                 >
-//                   About Us
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link
-//                   to="/services"
-//                   className="hover:text-blue-500 transition-colors"
-//                 >
-//                   Services
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link
-//                   to="/tracking"
-//                   className="hover:text-blue-500 transition-colors"
-//                 >
-//                   Track Shipment
-//                 </Link>
-//               </li>
-//               <li>
-//                 <Link
-//                   to="/contact"
-//                   className="hover:text-blue-500 transition-colors"
-//                 >
-//                   Contact
-//                 </Link>
-//               </li>
-//             </ul>
-//           </div>
-
-//           <div>
-//             <h3 className="font-bold text-white mb-4">Services</h3>
-//             <ul className="space-y-2">
-//               <li className="hover:text-blue-500 transition-colors cursor-pointer">
-//                 Express Delivery
-//               </li>
-//               <li className="hover:text-blue-500 transition-colors cursor-pointer">
-//                 International Shipping
-//               </li>
-//               <li className="hover:text-blue-500 transition-colors cursor-pointer">
-//                 Freight Services
-//               </li>
-//               <li className="hover:text-blue-500 transition-colors cursor-pointer">
-//                 Warehousing
-//               </li>
-//               <li className="hover:text-blue-500 transition-colors cursor-pointer">
-//                 Packaging Solutions
-//               </li>
-//             </ul>
-//           </div>
-
-//           <div>
-//             <h3 className="font-bold text-white mb-4">Contact Info</h3>
-//             <ul className="space-y-3">
-//               <li className="flex items-start gap-2">
-//                 <MapPin className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
-//                 <span className="text-sm">
-//                   123 Logistics Ave, Shipping District, NY 10001
-//                 </span>
-//               </li>
-//               <li className="flex items-center gap-2">
-//                 <Phone className="w-5 h-5 text-blue-500 shrink-0" />
-//                 <span className="text-sm">+1 (555) 123-4567</span>
-//               </li>
-//               <li className="flex items-center gap-2">
-//                 <Mail className="w-5 h-5 text-blue-500 shrink-0" />
-//                 <span className="text-sm">info@swiftcourier.com</span>
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-
-//         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-//           <p>
-//             &copy; {new Date().getFullYear()} SwiftCourier. All rights reserved.
-//             <br />
-//             Designed and developed by Mr Smith.
-//           </p>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
 import {
   Package,
   Mail,
@@ -159,7 +30,7 @@ export function Footer() {
                 <Package className="w-6 h-6 text-white" />
               </div>
               <span className="font-black text-lg text-white tracking-tighter uppercase">
-                Surepath <span className="text-orange-500">Logistics ltd</span>
+                Transora <span className="text-orange-500">Logistics ltd</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed">
@@ -267,18 +138,40 @@ export function Footer() {
                   123 Logistics Ave, <br />
                   Shipping District, NY 10001
                 </span>
+
+                {/* SECOND ADDRESS  */}
               </li>
+              <li className="flex items-start gap-4 group">
+                <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
+                  <MapPin className="w-5 h-5 text-orange-500 shrink-0" />
+                </div>
+                <span>
+                  Osmanl Sokak No 2/B taksim 34437, <br />
+                  Istanbul,Turkey.
+                </span>
+              </li>
+
               <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Phone className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
                 <span className="text-sm">+1 (413) 217-0381</span>
               </li>
+
+              {/* SECOND PHONE NUMBER  */}
+
+              <li className="flex items-center gap-4 group">
+                <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
+                  <Phone className="w-5 h-5 text-orange-500 shrink-0" />
+                </div>
+                <span className="text-sm">+90 (539) 3228 230</span>
+              </li>
+
               <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Mail className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
-                <span className="text-sm">info@surepath-logistics.com</span>
+                <span className="text-sm">Support@Transoralogistic.com</span>
               </li>
             </ul>
           </div>
@@ -289,12 +182,12 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
             <p className="text-slate-500">
               &copy; {new Date().getFullYear()}{" "}
-              <span className="text-slate-300">Surepath Logistics ltd</span>.
+              <span className="text-slate-300">Transora Logistics ltd</span>.
               Systems Operational.
             </p>
             <p className="text-slate-600">
               Architecture by{" "}
-              <span className="text-orange-500/80">Surepath</span>
+              <span className="text-orange-500/80">Transora</span>
             </p>
           </div>
         </div>

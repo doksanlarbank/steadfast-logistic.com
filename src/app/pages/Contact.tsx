@@ -411,17 +411,17 @@ export function Contact() {
                     </h3>
                     <span className="text-slate-600">
                       <a
-                        href="mailto:info@surepath-logistics.com"
+                        href="mailto:Support@Transoralogistic.com"
                         className="hover:underline"
                       >
-                        info@surepath-logistics.com
+                        Support@Transoralogistic.com
                       </a>
                       {/* <br />
                       <a
-                        href="mailto:support@surepath-logistics.com"
+                        href="mailto:support@Transora-logistics.com"
                         className="hover:underline"
                       >
-                        support@surepath-logistics.com
+                        support@Transora-logistics.com
                       </a> */}
                     </span>
                   </div>

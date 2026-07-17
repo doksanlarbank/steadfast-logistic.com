@@ -50,7 +50,7 @@
 //     {
 //       name: "Sarah Johnson",
 //       company: "Tech Solutions Inc.",
-//       text: "SwiftCourier has been our go-to logistics partner for 3 years. Their reliability and customer service are unmatched!",
+//       text: "Transorahas been our go-to logistics partner for 3 years. Their reliability and customer service are unmatched!",
 //       rating: 5,
 //     },
 //     {
@@ -62,7 +62,7 @@
 //     {
 //       name: "Emily Rodriguez",
 //       company: "E-commerce Plus",
-//       text: "Fast, efficient, and affordable. SwiftCourier helped scale our delivery operations seamlessly.",
+//       text: "Fast, efficient, and affordable. Transorahelped scale our delivery operations seamlessly.",
 //       rating: 5,
 //     },
 //   ];
@@ -396,18 +396,27 @@ export function Home() {
       {/* 1. HERO SECTION */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-slate-950/60 z-10" />
-        <img
+        {/* <img
           src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000"
           className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
           alt="Cargo Terminal"
+        /> */}
+        <video
+          src="/Hero.mp4"
+          className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
+
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto text-white">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="inline-block px-4 py-1 rounded-full bg-orange-500 text-md font-bold uppercase tracking-widest mb-6 "
           >
-            Surepath Logistics ltd
+            Transora Logistics ltd
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -608,7 +617,7 @@ export function Home() {
             Ready to Optimize Your Supply Chain?
           </h2>
           <p className="text-slate-300 text-xl mb-10 max-w-2xl mx-auto">
-            Join 5,000+ businesses that rely on SwiftCourier for their
+            Join 5,000+ businesses that rely on Transorafor their
             mission-critical deliveries.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

@@ -1,10 +1,11 @@
-# SwiftCourier - Logistics & Courier Management System
+# Transora- Logistics & Courier Management System
 
 A comprehensive courier and logistics management platform built with React, TypeScript, Tailwind CSS, and Supabase.
 
 ## Features
 
 ### Admin Panel
+
 - ✅ Client registration with complete sender/receiver forms
 - ✅ Status management (Pending, On Hold, In Transit, Delivered)
 - ✅ Automated notifications for registration and updates
@@ -12,6 +13,7 @@ A comprehensive courier and logistics management platform built with React, Type
 - ✅ Real-time shipment tracking and location updates
 
 ### User Website (5 Pages)
+
 1. **Home** - Hero section, statistics, services overview, testimonials, CTA
 2. **About** - Company story, mission/vision, values, team, milestones
 3. **Services** - Detailed service offerings and industries served
@@ -33,12 +35,14 @@ A comprehensive courier and logistics management platform built with React, Type
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ and pnpm
 - Supabase account
 
 ### Installation
 
 1. **Install dependencies**
+
    ```bash
    pnpm install
    ```
@@ -59,12 +63,15 @@ A comprehensive courier and logistics management platform built with React, Type
 ## Usage
 
 ### Admin Access
+
 Navigate to `/admin` to access the admin dashboard:
+
 - **Dashboard Tab**: View statistics and overview
 - **Register New Client Tab**: Create new shipments
 - **Manage Shipments Tab**: Update status, location, and notify clients
 
 ### Client Tracking
+
 Clients can track their shipments at `/tracking` using their tracking number (format: SC123456789)
 
 ## Project Structure
@@ -98,25 +105,32 @@ src/
 ## Key Features Explained
 
 ### Notification System
+
 Notifications are triggered for:
+
 - New client registration (sender & receiver)
 - Status updates
 - Location changes
 
 Currently logs to console. For production, integrate with:
+
 - Supabase Edge Functions + Resend/SendGrid
 - Custom email service
 - SMS notifications via Twilio
 
 ### Receipt Generator
+
 Automatically generates professional receipts with:
+
 - "PAID" watermark (semi-transparent)
 - Complete shipment details
 - Print/download functionality
 - Company branding
 
 ### Status Management
+
 Four shipment statuses:
+
 - **Pending**: Registered, awaiting pickup
 - **On Hold**: Temporarily paused
 - **In Transit**: Being delivered
@@ -127,6 +141,7 @@ Each status change creates a history entry with timestamp and location.
 ## Database Schema
 
 ### shipments
+
 - Tracking number (unique)
 - Sender details (name, email, phone, address, city, country)
 - Receiver details (name, email, phone, address, city, country)
@@ -135,6 +150,7 @@ Each status change creates a history entry with timestamp and location.
 - Timestamps
 
 ### status_history
+
 - Shipment reference
 - Status snapshot
 - Location
@@ -144,6 +160,7 @@ Each status change creates a history entry with timestamp and location.
 ## Images & Assets
 
 All images are sourced from Unsplash for:
+
 - Hero backgrounds
 - About page gallery
 - Service page imagery
@@ -152,13 +169,17 @@ All images are sourced from Unsplash for:
 ## Customization
 
 ### Branding
+
 Update company name and branding in:
+
 - `Navbar.tsx` and `Footer.tsx` components
 - `Receipt.tsx` for receipt header
 - `Home.tsx` hero section
 
 ### Styling
+
 Customize colors and themes in:
+
 - `src/styles/theme.css` for Tailwind tokens
 - Component-level Tailwind classes
 
@@ -176,6 +197,7 @@ Before deploying to production:
 ## Support
 
 For issues or questions:
+
 - Check [DATABASE_SETUP.md](./DATABASE_SETUP.md)
 - Review Supabase dashboard for errors
 - Verify environment variables
@@ -187,4 +209,5 @@ This project is built for demonstration and educational purposes.
 ---
 
 Built with ❤️ using React, TypeScript, Tailwind CSS, and Supabase
+
 # SWIFT-COURIER
