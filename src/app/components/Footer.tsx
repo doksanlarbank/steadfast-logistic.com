@@ -149,19 +149,19 @@ export function Footer() {
                   Istanbul,Turkey.
                 </span>
               </li>
-              {/* <li className="flex items-center gap-4 group">
+              <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Phone className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
-                <span className="text-sm">+1 (413) 217-0381</span>
-              </li> */}
+                <span className="text-sm">+1 (706) 836-1265</span>
+              </li>
 
               {/* SECOND PHONE NUMBER  */}
               <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Phone className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
-                <span className="text-sm">+90 (539) 3228 230</span>
+                <span className="text-sm">+90 (539) 3228-230</span>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
