@@ -130,7 +130,7 @@ export function Footer() {
               Headquarters
             </h3>
             <ul className="space-y-5">
-              {/* <li className="flex items-start gap-4 group">
+              <li className="flex items-start gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <MapPin className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
@@ -139,7 +139,7 @@ export function Footer() {
                   Shipping District, NY 10001
                 </span>
 
-                {/* SECOND ADDRESS  */}
+                {/* SECOND ADDRESS   */}
               </li> */}
               <li className="flex items-start gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
@@ -151,13 +151,12 @@ export function Footer() {
                 </span>
               </li>
 
-              {/* <li className="flex items-center gap-4 group">
+               <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Phone className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
                 <span className="text-sm">+1 (413) 217-0381</span>
-              </li> */}
-
+              </li> */
               {/* SECOND PHONE NUMBER  */}
 
               <li className="flex items-center gap-4 group">
