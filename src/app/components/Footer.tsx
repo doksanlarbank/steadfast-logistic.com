@@ -149,6 +149,8 @@ export function Footer() {
                   Istanbul,Turkey.
                 </span>
               </li>
+
+              {/* FIRST PHONE NUMBER  */}
               <li className="flex items-center gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Phone className="w-5 h-5 text-orange-500 shrink-0" />
