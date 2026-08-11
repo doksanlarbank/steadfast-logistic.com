@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react"; // Added hooks
+import heroVideo from "../../assets/hero.mp4";
 import {
   Package,
   Truck,
@@ -109,7 +110,7 @@ export function Home() {
           alt="Cargo Terminal"
         /> */}
         <video
-          src="/hero.mp4"
+          src={heroVideo}
           className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
           autoPlay
           loop
