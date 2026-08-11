@@ -372,9 +372,10 @@ export function Contact() {
                       Office Address
                     </h3>
                     <p className="text-slate-600">
-                      123 Logistics Ave, Shipping District
+                      Osmanl Sokak No 2/B taksim 34437,
+                      
                       <br />
-                      New York, NY 10001, USA
+                      Istanbul,Turkey
                     </p>
                   </div>
                 </div>
@@ -389,8 +390,9 @@ export function Contact() {
                     </h3>
                     <span className="text-slate-600">
                       Main:{" "}
-                      <a href="tel:+14132170381" className="hover:underline">
-                        +1 (413) 217-0381
+                      <a href="tel:+90 (539) 3228 230" className="hover:underline">
+                        +90 (539) 3228 230
+
                       </a>
                       <br />
                       Support:{" "}
