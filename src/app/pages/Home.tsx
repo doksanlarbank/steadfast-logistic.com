@@ -109,7 +109,7 @@ export function Home() {
           alt="Cargo Terminal"
         /> */}
         <video
-          src="Public/Hero.mp4"
+          src="/hero.mp4"
           className="absolute inset-0 w-full h-full object-cover scale-105 animate-pulse-slow"
           autoPlay
           loop
