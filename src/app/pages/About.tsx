@@ -126,7 +126,7 @@
 //             >
 //               <h2 className="text-4xl mb-6">Our Story</h2>
 //               <p className="text-gray-600 text-lg mb-4">
-//                 Founded in 2010, Transorastarted as a small local delivery
+//                 Founded in 2010, Steadfaststarted as a small local delivery
 //                 service with a big vision: to revolutionize the logistics
 //                 industry through technology, reliability, and exceptional
 //                 customer service.
@@ -456,7 +456,7 @@ export function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-black mb-4"
           >
-            About <span className="text-orange-500">Transora-Logistic</span>
+            About <span className="text-orange-500">Steadfast-Logistic</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -487,7 +487,7 @@ export function About() {
               </h3>
               <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  Founded in 2010, Transora-Logistic started as a small local
+                  Founded in 2010, Steadfast-Logistic started as a small local
                   delivery service with a big vision: to revolutionize the
                   logistics industry through technology, reliability, and
                   exceptional customer service.

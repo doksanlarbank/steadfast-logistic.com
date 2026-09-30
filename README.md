@@ -1,4 +1,4 @@
-# Transora- Logistics & Courier Management System
+# Steadfast- Logistics & Courier Management System
 
 A comprehensive courier and logistics management platform built with React, TypeScript, Tailwind CSS, and Supabase.
 

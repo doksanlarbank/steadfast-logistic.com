@@ -351,7 +351,7 @@ export function Services() {
     <div className="min-h-screen bg-white text-slate-900">
       {/* HERO SECTION - Softened Typography */}
       <section
-        className="relative h-[450px] flex items-center justify-center text-white"
+        className="relative h-112.5 flex items-center justify-center text-white"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=2000)",

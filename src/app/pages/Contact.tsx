@@ -179,17 +179,17 @@
 //                     </h3>
 //                     <span className="text-slate-600">
 //                       <a
-//                         href="mailto:Support@Transoralogistic.com"
+//                         href="mailto:Support@Steadfastlogistic.com"
 //                         className="hover:underline"
 //                       >
-//                         Support@Transoralogistic.com
+//                         Support@Steadfastlogistic.com
 //                       </a>
 //                       {/* <br />
 //                       <a
-//                         href="mailto:support@Transora-logistics.com"
+//                         href="mailto:support@Steadfast-logistics.com"
 //                         className="hover:underline"
 //                       >
-//                         support@Transora-logistics.com
+//                         support@Steadfast-logistics.com
 //                       </a> */}
 //                     </span>
 //                   </div>
@@ -505,10 +505,10 @@ export function Contact() {
                     </h3>
                     <span className="text-slate-600">
                       <a
-                        href="mailto:Support@Transoralogistic.com"
+                        href="mailto:Support@Steadfastlogistic.com"
                         className="hover:underline"
                       >
-                        Support@Transoralogistic.com
+                        Support@Steadfastlogistic.com
                       </a>
                     </span>
                   </div>

@@ -30,7 +30,8 @@ export function Footer() {
                 <Package className="w-6 h-6 text-white" />
               </div>
               <span className="font-black text-lg text-white tracking-tighter uppercase">
-                Transora <span className="text-orange-500">Logistics ltd</span>
+                Steadfast{" "}
+                <span className="text-orange-500">-Logistics ltd</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed">
@@ -130,7 +131,7 @@ export function Footer() {
               Headquarters
             </h3>
             <ul className="space-y-5">
-              {/* <li className="flex items-start gap-4 group">
+              <li className="flex items-start gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <MapPin className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
@@ -138,9 +139,9 @@ export function Footer() {
                   123 Logistics Ave, <br />
                   Shipping District, NY 10001
                 </span>
-              </li> */}
+              </li>
               {/* SECOND ADDRESS   */}
-              <li className="flex items-start gap-4 group">
+              {/* <li className="flex items-start gap-4 group">
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <MapPin className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
@@ -148,7 +149,7 @@ export function Footer() {
                   Osmanl Sokak No 2/B taksim 34437, <br />
                   Istanbul,Turkey.
                 </span>
-              </li>
+              </li> */}
 
               {/* FIRST PHONE NUMBER  */}
               <li className="flex items-center gap-4 group">
@@ -169,7 +170,7 @@ export function Footer() {
                 <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-orange-500/10 transition-colors">
                   <Mail className="w-5 h-5 text-orange-500 shrink-0" />
                 </div>
-                <span className="text-sm">Support@Transoralogistic.com</span>
+                <span className="text-sm">Support@Steadfast-logistics.com</span>
               </li>
             </ul>
           </div>
@@ -180,12 +181,12 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
             <p className="text-slate-500">
               &copy; {new Date().getFullYear()}{" "}
-              <span className="text-slate-300">Transora Logistics ltd</span>.
+              <span className="text-slate-300">Steadfast Logistics ltd</span>.
               Systems Operational.
             </p>
             <p className="text-slate-600">
               Architecture by{" "}
-              <span className="text-orange-500/80">Transora</span>
+              <span className="text-orange-500/80">Steadfast</span>
             </p>
           </div>
         </div>

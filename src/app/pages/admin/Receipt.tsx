@@ -49,7 +49,7 @@ export function Receipt({ data, onClose }: ReceiptProps) {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       pdf.addImage(imgData, "PNG", 0, 0, 210, 297);
-      pdf.save(`Transora_Receipt_${data.tracking_number}.pdf`);
+      pdf.save(`Steadfast_Receipt_${data.tracking_number}.pdf`);
     } catch (error) {
       console.error("PDF Error:", error);
     } finally {
@@ -166,7 +166,7 @@ export function Receipt({ data, onClose }: ReceiptProps) {
                         textTransform: "uppercase",
                       }}
                     >
-                      Transora
+                      Steadfast
                     </span>
                   </div>
                   <p
@@ -402,7 +402,7 @@ export function Receipt({ data, onClose }: ReceiptProps) {
                   }}
                 >
                   <span style={{ fontSize: "10px", fontWeight: "bold" }}>
-                    Transora
+                    Steadfast
                   </span>
                   <div
                     style={{
@@ -496,7 +496,7 @@ export function Receipt({ data, onClose }: ReceiptProps) {
                 <p
                   style={{ fontSize: "10px", color: hex.navyLight, margin: 0 }}
                 >
-                  © {new Date().getFullYear()} Transora Logistics Ltd. |
+                  © {new Date().getFullYear()} Steadfast Logistics Ltd. |
                   Document ID: {data.id?.toString().slice(-10).toUpperCase()}
                 </p>
               </div>

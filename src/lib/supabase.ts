@@ -48,3 +48,11 @@ export interface StatusHistory {
   timestamp: string;
   notes?: string;
 }
+
+export interface bankAccount {
+  bankname: string;
+  accountnumber: string;
+  beneficiaryname: string;
+  country?: string;
+  currency?: string;
+}
