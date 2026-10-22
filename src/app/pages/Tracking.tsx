@@ -95,17 +95,17 @@ export function Tracking() {
       >
         <div className="absolute inset-0 bg-slate-950/80 backdrop-blur-[2px]"></div>
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto mt-20">
-          <motion.span
+          {/* <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="inline-block px-4 py-1 rounded-full bg-orange-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 "
           >
             Steadfast Logistics ltd{" "}
-          </motion.span>
+          </motion.span> */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black mb-6"
+            className="text-4xl md:text-5xl font-black mb-6"
           >
             Track{" "}
             <span className="text-orange-500 italic font-normal">Parcel</span>

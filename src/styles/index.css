@@ -1,3 +1,36 @@
 @import './fonts.css';
 @import './tailwind.css';
 @import './theme.css';
+
+.goog-te-banner-frame,
+iframe.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+html,
+body {
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.navbar-translate .goog-te-gadget {
+  color: #cbd5e1 !important;
+  font-family: inherit !important;
+  font-size: 0.75rem !important;
+  white-space: nowrap;
+}
+
+.navbar-translate .goog-te-combo {
+  max-width: 9rem;
+  min-height: 2.25rem;
+  margin: 0 !important;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgb(255 255 255 / 0.15);
+  border-radius: 0.75rem;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  font: inherit;
+  cursor: pointer;
+}

@@ -222,13 +222,13 @@ export function Home(this: any) {
         />
 
         <div className="relative z-20 text-center justify-center px-4 max-w-5xl mx-auto text-white">
-          <motion.span
+          {/* <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="inline-block px-4 py-1 rounded-full bg-orange-500 text-md font-bold uppercase tracking-widest mb-6 "
           >
             Steadfast Logistics ltd
-          </motion.span>
+          </motion.span> */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

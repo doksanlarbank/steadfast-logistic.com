@@ -1,6 +1,155 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Package, Menu, X, ShieldCheck } from "lucide-react";
+import { Package, Menu, X, ShieldCheck, Languages } from "lucide-react";
+
+type GoogleTranslateElementConstructor = new (
+  options: { pageLanguage: string; autoDisplay: boolean },
+  elementId: string,
+) => unknown;
+
+declare global {
+  interface Window {
+    google?: {
+      translate?: {
+        TranslateElement?: GoogleTranslateElementConstructor;
+      };
+    };
+    googleTranslateElementInit?: () => void;
+  }
+}
+
+let googleTranslateScript: Promise<void> | undefined;
+
+function loadGoogleTranslate(): Promise<void> {
+  if (window.google?.translate?.TranslateElement) {
+    return Promise.resolve();
+  }
+
+  if (googleTranslateScript) {
+    return googleTranslateScript;
+  }
+
+  googleTranslateScript = new Promise<void>((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src =
+      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    script.async = true;
+
+    const timeout = window.setTimeout(() => {
+      script.remove();
+      googleTranslateScript = undefined;
+      reject(new Error("Google Translate took too long to initialize."));
+    }, 15000);
+
+    window.googleTranslateElementInit = () => {
+      window.clearTimeout(timeout);
+      if (!window.google?.translate?.TranslateElement) {
+        script.remove();
+        googleTranslateScript = undefined;
+        reject(new Error("The Google Translate API was unavailable."));
+        return;
+      }
+      resolve();
+    };
+
+    script.onerror = () => {
+      window.clearTimeout(timeout);
+      script.remove();
+      googleTranslateScript = undefined;
+      reject(new Error("The Google Translate script could not be loaded."));
+    };
+
+    document.head.appendChild(script);
+  });
+
+  return googleTranslateScript;
+}
+
+function GoogleTranslate() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [status, setStatus] = useState<"loading" | "ready" | "error">(
+    "loading",
+  );
+  const [retry, setRetry] = useState(0);
+  const initialized = useRef(false);
+
+  useEffect(() => {
+    if (!isOpen || initialized.current) return;
+
+    let isMounted = true;
+    setStatus("loading");
+
+    loadGoogleTranslate()
+      .then(() => {
+        if (!isMounted) return;
+
+        const TranslateElement = window.google?.translate?.TranslateElement;
+        if (!TranslateElement) {
+          throw new Error("The Google Translate API was unavailable.");
+        }
+
+        new TranslateElement(
+          { pageLanguage: "en", autoDisplay: false },
+          "google_translate_element",
+        );
+        initialized.current = true;
+        document
+          .querySelector("#google_translate_element select.goog-te-combo")
+          ?.setAttribute("aria-label", "Translate this page");
+        setStatus("ready");
+      })
+      .catch((error: unknown) => {
+        console.error("Google Translate failed to initialize.", error);
+        if (isMounted) setStatus("error");
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isOpen, retry]);
+
+  return (
+    <div className="navbar-translate relative flex items-center">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls="google-translate-panel"
+        onClick={() => setIsOpen((open) => !open)}
+        className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-200 transition-colors hover:border-orange-500 hover:text-white"
+      >
+        <Languages className="h-4 w-4 shrink-0" aria-hidden="true" />
+        <span>Translate</span>
+      </button>
+      <div
+        id="google-translate-panel"
+        className={`absolute right-0 top-full z-60 mt-3 min-w-56 rounded-xl border border-slate-700 bg-slate-900 p-3 shadow-2xl ${
+          isOpen ? "" : "hidden"
+        }`}
+      >
+        <div id="google_translate_element" />
+        {status === "loading" && (
+          <span className="text-xs text-slate-300" role="status">
+            Loading translation options...
+          </span>
+        )}
+        {status === "error" && (
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-xs text-slate-300">
+              Translation is unavailable.
+            </span>
+            <button
+              type="button"
+              onClick={() => setRetry((attempt) => attempt + 1)}
+              className="text-xs font-semibold text-orange-400 underline underline-offset-2 hover:text-orange-300"
+            >
+              Retry
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,32 +175,32 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-slate-950/95 backdrop-blur-md shadow-2xl py-3"
+          ? "bg-slate-950/95 py-3 shadow-2xl backdrop-blur-md"
           : "bg-slate-950 py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-12">
+      <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex h-12 items-center justify-between">
           {/* LOGO */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-orange-500 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-orange-500/20">
-              <Package className="w-6 h-6 text-white" />
+          <Link to="/" className="group flex items-center gap-3">
+            <div className="rounded-xl bg-orange-500 p-2 shadow-lg shadow-orange-500/20 transition-transform duration-300 group-hover:rotate-12">
+              <Package className="h-6 w-6 text-white" />
             </div>
-            <span className="font-black text-xl text-white tracking-tighter uppercase">
+            <span className="text-xl font-black uppercase tracking-tighter text-white">
               Steadfast <span className="text-orange-500">- Logistics ltd</span>
             </span>
           </Link>
 
-          {/* DESKTOP NAV */}
-          <div className="hidden lg:flex items-center gap-10">
-            <div className="flex items-center gap-8">
+          {/* DESKTOP NAV & ACTIONS */}
+          <div className="hidden xl:flex items-center gap-8">
+            <div className="flex items-center gap-7">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-extrabold uppercase tracking-[0.2em] transition-all duration-300 relative py-2 ${
+                  className={`relative py-2 text-sm font-extrabold uppercase tracking-[0.2em] transition-all duration-300 ${
                     isActive(link.path)
                       ? "text-orange-500"
                       : "text-slate-400 hover:text-white"
@@ -59,37 +208,52 @@ export function Navbar() {
                 >
                   {link.name}
                   {isActive(link.path) && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 rounded-full" />
+                    <span className="absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-orange-500" />
                   )}
                 </Link>
               ))}
             </div>
 
-            <div className="h-6 w-px bg-slate-800 mx-2" />
+            <div className="h-6 w-px bg-slate-800" />
 
-            <Link
-              to="/tracking"
-              className="flex items-center gap-2 bg-white/5 hover:bg-orange-500 text-white px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all border border-white/10 hover:border-orange-500 shadow-xl"
-            >
-              <ShieldCheck className="w-4 h-4" />
-              Track Parcel
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                to="/tracking"
+                className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 text-xs font-black uppercase tracking-widest text-white shadow-xl transition-all hover:border-orange-500 hover:bg-orange-500"
+              >
+                <ShieldCheck className="h-4 w-4" />
+                Track Parcel
+              </Link>
+              <GoogleTranslate />
+            </div>
           </div>
 
-          {/* MOBILE TOGGLE */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-xl bg-slate-900 text-slate-400 hover:text-orange-500 transition-colors"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* MOBILE & TABLET RIGHT ACTIONS (TOGGLE + TRANSLATE) */}
+          <div className="flex items-center gap-3 xl:hidden">
+            <GoogleTranslate />
+            <button
+              type="button"
+              aria-label={
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+              }
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen(!isOpen)}
+              className="rounded-xl bg-slate-900 p-2 text-slate-400 transition-colors hover:text-orange-500"
+            >
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU DROPDOWN */}
       {isOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-slate-950 border-t border-slate-900 shadow-2xl animate-in slide-in-from-top duration-300">
-          <div className="px-6 py-8 space-y-6">
+        <div className="absolute left-0 top-full w-full border-t border-slate-900 bg-slate-950 shadow-2xl animate-in slide-in-from-top duration-300 xl:hidden">
+          <div className="space-y-6 px-6 py-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -102,14 +266,16 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/tracking"
-              className="flex items-center justify-center gap-3 bg-orange-500 text-white w-full py-4 rounded-2xl font-black uppercase tracking-[0.2em]"
-              onClick={() => setIsOpen(false)}
-            >
-              <ShieldCheck className="w-5 h-5" />
-              Track Parcel
-            </Link>
+            <div className="pt-2">
+              <Link
+                to="/tracking"
+                className="flex w-full items-center justify-center gap-3 rounded-2xl bg-orange-500 py-4 font-black uppercase tracking-[0.2em] text-white shadow-lg shadow-orange-500/20"
+                onClick={() => setIsOpen(false)}
+              >
+                <ShieldCheck className="h-5 w-5" />
+                Track Parcel
+              </Link>
+            </div>
           </div>
         </div>
       )}
