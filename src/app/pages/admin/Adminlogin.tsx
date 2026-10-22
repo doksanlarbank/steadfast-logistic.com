@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   // Your hardcoded credentials
   const USER_NAME = "Admin123";
-  const PASS = "Oby2026";
+  const PASS = "Billy2026@";
 
   const handleLogin = (e) => {
     e.preventDefault();
