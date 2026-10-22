@@ -514,6 +514,7 @@ export default function Bankaccount() {
               >
                 <option value="checking">Checking</option>
                 <option value="savings">Savings</option>
+                <option value="business">Business</option>
               </select>
             </div>
           </>
