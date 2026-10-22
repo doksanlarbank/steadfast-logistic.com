@@ -1,230 +1,3 @@
-// import { motion } from "framer-motion";
-// import {
-//   Truck,
-//   Globe,
-//   Package,
-//   Warehouse,
-//   Shield,
-//   Plane,
-//   Ship,
-//   Box,
-// } from "lucide-react";
-
-// export function Services() {
-//   const services = [
-//     {
-//       icon: <Truck className="w-16 h-16 text-blue-600" />,
-//       title: "Express Delivery",
-//       description:
-//         "Lightning-fast delivery services for time-sensitive shipments. Get your packages delivered within 24-48 hours across major cities.",
-//       features: [
-//         "Same-day pickup",
-//         "Real-time tracking",
-//         "Signature confirmation",
-//         "Insurance included",
-//       ],
-//     },
-//     {
-//       icon: <Globe className="w-16 h-16 text-blue-600" />,
-//       title: "International Shipping",
-//       description:
-//         "Seamless global shipping solutions to over 150 countries with full customs support and documentation assistance.",
-//       features: [
-//         "Customs clearance",
-//         "Door-to-door delivery",
-//         "Multi-currency support",
-//         "Import/export expertise",
-//       ],
-//     },
-//     {
-//       icon: <Plane className="w-16 h-16 text-blue-600" />,
-//       title: "Air Freight",
-//       description:
-//         "Fast and reliable air cargo services for urgent international shipments with priority handling.",
-//       features: [
-//         "Priority boarding",
-//         "Express customs",
-//         "Temperature control",
-//         "Charter options",
-//       ],
-//     },
-//     {
-//       icon: <Ship className="w-16 h-16 text-blue-600" />,
-//       title: "Ocean Freight",
-//       description:
-//         "Cost-effective sea freight solutions for large volume shipments with full container and LCL options.",
-//       features: [
-//         "FCL & LCL options",
-//         "Port-to-port",
-//         "Bulk shipping",
-//         "Competitive rates",
-//       ],
-//     },
-//     {
-//       icon: <Warehouse className="w-16 h-16 text-blue-600" />,
-//       title: "Warehousing Solutions",
-//       description:
-//         "Secure storage facilities with inventory management, order fulfillment, and distribution services.",
-//       features: [
-//         "Climate controlled",
-//         "Inventory tracking",
-//         "Pick & pack",
-//         "Distribution center",
-//       ],
-//     },
-//     {
-//       icon: <Package className="w-16 h-16 text-blue-600" />,
-//       title: "E-commerce Fulfillment",
-//       description:
-//         "Complete e-commerce logistics from storage to last-mile delivery, integrated with major platforms.",
-//       features: [
-//         "Platform integration",
-//         "Order processing",
-//         "Returns management",
-//         "COD available",
-//       ],
-//     },
-//     {
-//       icon: <Box className="w-16 h-16 text-blue-600" />,
-//       title: "Packaging Services",
-//       description:
-//         "Professional packaging solutions to ensure your items arrive safely, with custom options available.",
-//       features: [
-//         "Custom packaging",
-//         "Fragile handling",
-//         "Crating service",
-//         "Eco-friendly materials",
-//       ],
-//     },
-//     {
-//       icon: <Shield className="w-16 h-16 text-blue-600" />,
-//       title: "Insurance & Security",
-//       description:
-//         "Comprehensive insurance coverage and advanced security measures to protect your valuable shipments.",
-//       features: [
-//         "Full coverage",
-//         "GPS tracking",
-//         "Secure facilities",
-//         "Claims support",
-//       ],
-//     },
-//   ];
-
-//   const industries = [
-//     { name: "E-commerce", icon: "🛒" },
-//     { name: "Healthcare", icon: "🏥" },
-//     { name: "Manufacturing", icon: "🏭" },
-//     { name: "Retail", icon: "🏬" },
-//     { name: "Technology", icon: "💻" },
-//     { name: "Food & Beverage", icon: "🍽️" },
-//   ];
-
-//   return (
-//     <div className="min-h-screen pt-16">
-//       <section
-//         className="relative h-[400px] flex items-center justify-center text-white"
-//         style={{
-//           backgroundImage:
-//             "url(https://images.unsplash.com/photo-1763752194641-3c5638aec65e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHx3YXJlaG91c2UlMjBzaGlwcGluZyUyMGJveGVzfGVufDF8fHx8MTc3Njc0NDE5N3ww&ixlib=rb-4.1.0&q=80&w=1080)",
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//         }}
-//       >
-//         <div className="absolute inset-0 bg-linear-to-r from-blue-900/90 to-gray-900/80"></div>
-//         <div className="relative z-10 text-center px-4">
-//           <motion.h1
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8 }}
-//             className="text-5xl md:text-6xl mb-4"
-//           >
-//             Our Services
-//           </motion.h1>
-//           <motion.p
-//             initial={{ opacity: 0, y: 30 }}
-//             animate={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.8, delay: 0.2 }}
-//             className="text-xl"
-//           >
-//             Comprehensive logistics solutions for every need
-//           </motion.p>
-//         </div>
-//       </section>
-
-//       <section className="py-20">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//             {services.map((service, index) => (
-//               <motion.div
-//                 key={index}
-//                 initial={{ opacity: 0, y: 30 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 viewport={{ once: true }}
-//                 transition={{ duration: 0.5, delay: index * 0.1 }}
-//                 className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-//               >
-//                 <div className="mb-4">{service.icon}</div>
-//                 <h3 className="text-2xl mb-3">{service.title}</h3>
-//                 <p className="text-gray-600 mb-6">{service.description}</p>
-//                 <div className="space-y-2">
-//                   {service.features.map((feature, i) => (
-//                     <div key={i} className="flex items-center gap-2">
-//                       <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-//                       <span className="text-gray-700">{feature}</span>
-//                     </div>
-//                   ))}
-//                 </div>
-//               </motion.div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       <section className="py-20 bg-gray-50">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-4xl mb-4">Industries We Serve</h2>
-//             <p className="text-gray-600 text-lg">
-//               Tailored logistics solutions for diverse sectors
-//             </p>
-//           </div>
-//           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-//             {industries.map((industry, index) => (
-//               <motion.div
-//                 key={index}
-//                 initial={{ opacity: 0, scale: 0.8 }}
-//                 whileInView={{ opacity: 1, scale: 1 }}
-//                 viewport={{ once: true }}
-//                 transition={{ duration: 0.5, delay: index * 0.1 }}
-//                 className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow"
-//               >
-//                 <div className="text-4xl mb-3">{industry.icon}</div>
-//                 <p className="text-gray-800 font-medium">{industry.name}</p>
-//               </motion.div>
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-
-//       <section className="py-20 bg-blue-600 text-white">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//           <h2 className="text-4xl mb-4">Need a Custom Solution?</h2>
-//           <p className="text-xl mb-8">
-//             Our team can design a tailored logistics plan for your unique
-//             requirements
-//           </p>
-//           <a
-//             href="/contact"
-//             className="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors inline-block"
-//           >
-//             Request a Consultation
-//           </a>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
 import { motion } from "framer-motion";
 import {
   Truck,
@@ -236,6 +9,9 @@ import {
   Ship,
   Box,
   ArrowRight,
+  Clock,
+  ShieldCheck,
+  Sparkles,
 } from "lucide-react";
 
 export function Services() {
@@ -461,7 +237,7 @@ export function Services() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="bg-orange-500 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-orange-500/20">
             <div className="relative z-10">
@@ -478,10 +254,76 @@ export function Services() {
               >
                 Request a Consultation <ArrowRight className="w-5 h-5" />
               </a>
-            </div>
-            {/* Abstract background shapes for the CTA */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+            </div> */}
+      {/* Abstract background shapes for the CTA */}
+      {/* <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full -ml-20 -mb-20 blur-3xl"></div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="py-16 sm:py-24 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative bg-slate-950 rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-16 text-center text-white overflow-hidden shadow-2xl border border-slate-800">
+            {/* Subtle Grid Pattern Overlay */}
+            <div
+              className="absolute inset-0 opacity-[0.07] pointer-events-none"
+              style={{
+                backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
+                backgroundSize: "24px 24px",
+              }}
+            />
+
+            {/* Background Gradient Lights */}
+            <div className="absolute -top-24 -right-24 w-80 h-80 bg-orange-500/20 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-orange-600/15 rounded-full blur-[100px] pointer-events-none" />
+
+            {/* Content */}
+            <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+              {/* Top Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md">
+                <Sparkles className="w-4 h-4 text-orange-400" />
+                <span>Tailored Supply Chain Engineering</span>
+              </div>
+
+              {/* Heading */}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 leading-[1.15]">
+                Need a{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
+                  Bespoke Solution?
+                </span>
+              </h2>
+
+              {/* Paragraph */}
+              <p className="text-slate-300 text-base sm:text-lg lg:text-xl mb-8 max-w-2xl leading-relaxed">
+                Our logistics architects design custom-fit strategies and
+                operations tailored to your organization’s unique supply chain
+                demands.
+              </p>
+
+              {/* CTA Action */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <a
+                  href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-orange-500 hover:bg-orange-400 text-slate-950 font-bold rounded-full text-base transition-all duration-300 shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  Request a Consultation
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+
+              {/* Trust Reassurance Highlights */}
+              <div className="mt-10 pt-8 border-t border-slate-800/80 w-full max-w-xl flex flex-wrap justify-center items-center gap-6 text-xs sm:text-sm text-slate-400 font-medium">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-orange-400" />
+                  <span>NDA & Confidentiality Guaranteed</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-orange-400" />
+                  <span>24-Hour Response Time</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
