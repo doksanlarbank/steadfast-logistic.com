@@ -289,7 +289,7 @@ export function Services() {
               {/* Heading */}
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 leading-[1.15]">
                 Need a{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-amber-300">
                   Bespoke Solution?
                 </span>
               </h2>
