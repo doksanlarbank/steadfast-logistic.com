@@ -287,6 +287,9 @@ export default function Bankaccount() {
     swift_bic: "",
     iban: "",
     country: "",
+    beneficiary_address: "",
+    bank_address: "",
+    bank_branch: "",
   });
 
   // Fetch existing bank details on component mount to support editing
@@ -313,6 +316,9 @@ export default function Bankaccount() {
             swift_bic: data.swift_bic || "",
             iban: data.iban || "",
             country: data.country || "",
+            beneficiary_address: data.beneficiary_address || "",
+            bank_address: data.bank_address || "",
+            bank_branch: data.bank_branch || "",
           });
         }
       } catch (err) {
@@ -345,6 +351,9 @@ export default function Bankaccount() {
       swift_bic: accountType === "international" ? formData.swift_bic : null,
       iban: accountType === "international" ? formData.iban : null,
       country: accountType === "international" ? formData.country : null,
+      beneficiary_address: formData.beneficiary_address || null,
+      bank_address: formData.bank_address || null,
+      bank_branch: formData.bank_branch || null,
     };
 
     try {
@@ -440,7 +449,7 @@ export default function Bankaccount() {
         {/* Common Fields */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Account Holder Name
+            Beneficiary Name
           </label>
           <input
             type="text"
@@ -531,7 +540,7 @@ export default function Bankaccount() {
                 <input
                   type="text"
                   name="swift_bic"
-                  required
+                  // required
                   value={formData.swift_bic}
                   onChange={handleChange}
                   placeholder="8 or 11 characters"
@@ -556,15 +565,60 @@ export default function Bankaccount() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
+                BENEFICIARY ADDRESS
+              </label>
+              <input
+                type="text"
+                name="beneficiary_address"
+                required
+                value={formData.beneficiary_address}
+                onChange={handleChange}
+                placeholder=" YOUR BENEFICIARY ADDRESS"
+                className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm uppercase"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 IBAN
               </label>
               <input
                 type="text"
                 name="iban"
-                required
+                // required
                 value={formData.iban}
                 onChange={handleChange}
                 placeholder="GB29 NWBK 6016 1331 9268 19"
+                className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm uppercase"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                BANK ADDRESS
+              </label>
+              <input
+                type="text"
+                name="bank_address"
+                required
+                value={formData.bank_address}
+                onChange={handleChange}
+                placeholder="123 Main Street, City, Country"
+                className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm uppercase"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                BANK BRANCH
+              </label>
+              <input
+                type="text"
+                name="bank_branch"
+                required
+                value={formData.bank_branch}
+                onChange={handleChange}
+                placeholder=" Branch Name"
                 className="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm uppercase"
               />
             </div>
