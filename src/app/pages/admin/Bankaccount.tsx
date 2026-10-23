@@ -500,7 +500,7 @@ export default function Bankaccount() {
                   Account Number
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   name="account_number"
                   required
                   value={formData.account_number}
