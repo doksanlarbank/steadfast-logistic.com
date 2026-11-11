@@ -14,6 +14,7 @@ import {
 export function RegisterClient() {
   const [showReceipt, setShowReceipt] = useState(false);
   const [receiptData, setReceiptData] = useState<any>(null);
+  const [submitting, setsubmitting]= useState(false)
   const [formData, setFormData] = useState({
     sender_name: "",
     sender_email: "",
@@ -43,6 +44,7 @@ export function RegisterClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setsubmitting(true)
 
     const trackingNumber = generateTrackingNumber();
     const shipmentData = {
@@ -392,10 +394,13 @@ export function RegisterClient() {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+          disabled={submitting}
+          className={`w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 ${
+            submitting ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+          }`}
         >
           <FileText className="w-5 h-5" />
-          Register Client & Generate Receipt
+          {submitting ? "Registering Client & Generating Receipt...." : "Register New Parcel"}
         </button>
       </form>
     </div>
