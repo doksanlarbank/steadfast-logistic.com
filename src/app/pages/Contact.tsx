@@ -131,9 +131,7 @@ export function Contact() {
                       Office Address
                     </h3>
                     <p className="text-slate-600">
-                      Osmanl Sokak No 2/B taksim 34437,
-                      <br />
-                      Istanbul, Turkey
+                      123 Logistics Ave, <br />Shipping District, NY 10001
                     </p>
                   </div>
                 </div>
@@ -147,11 +145,11 @@ export function Contact() {
                       Phone Numbers
                     </h3>
                     <span className="text-slate-600">
-                      Main:{" "}
+                      {/* Main:{" "}
                       <a href="tel:+905393228230" className="hover:underline">
                         +90 (539) 3228 230
                       </a>
-                      <br />
+                      <br /> */}
                       Support:{" "}
                       <a href="tel:+17068361262" className="hover:underline">
                         +1 (706) 836-1262
